@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal portfolio of [Your Name] — Student Developer building web projects, participating in hackathons, and contributing to open source.">
+  <title>[Your Name] | Developer Portfolio</title>
+
+  <!-- Main Stylesheet (CSS Custom Properties Design System) -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Accessible Skip Link: Allows keyboard/screen reader users to jump directly to the main content -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ========================================================================
+       1. NAVIGATION BAR
+       Works natively without JavaScript via standard anchor links.
+       JavaScript progressively enhances this with a mobile drawer toggle.
+       ======================================================================== -->
+  <header class="site-header" id="top">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-logo" aria-label="Home">
+        <span class="logo-symbol">&lt;/&gt;</span>
+        <span class="logo-text">[Your Name]</span>
+      </a>
+
+      <!-- Mobile navigation toggle button (progressive enhancement) -->
+      <button 
+        type="button" 
+        class="nav-toggle" 
+        id="nav-toggle" 
+        aria-controls="nav-menu" 
+        aria-expanded="false" 
+        aria-label="Toggle navigation menu"
+        hidden
+      >
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <nav class="site-nav" id="nav-menu" aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#achievements" class="nav-link">Achievements</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       MAIN CONTENT CONTAINER
+       ======================================================================== -->
+  <main id="main-content">
+
+    <!-- ======================================================================
+         2. HERO SECTION
+         Clear name, value proposition/headline, intro, and call-to-actions.
+         ====================================================================== -->
+    <section class="section hero-section" id="hero" aria-labelledby="hero-title">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <p class="hero-greeting">Hi, I'm</p>
+          <h1 class="hero-title" id="hero-title">[Your Name]</h1>
+          <p class="hero-headline">[Your Professional Headline / Student Developer]</p>
+          <p class="hero-intro">
+            [Brief 1–2 sentence introduction about what you love to build, your current educational or technical focus, and your passion for learning.]
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">Explore Projects</a>
+            <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         3. ABOUT ME
+         Background, current study/learning focus, and developer philosophy.
+         ====================================================================== -->
+    <section class="section about-section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <h2 class="section-title" id="about-title">About Me</h2>
+        <p class="section-subtitle">[A short overview of who you are and where you are heading.]</p>
+        
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              [Paragraph 1: Describe your background as a student developer, your university/degree program, or self-directed learning journey.]
+            </p>
+            <p>
+              [Paragraph 2: Mention what drives you — building practical applications, collaborating on software, and exploring emerging web technologies.]
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         4. SKILLS & TECHNOLOGIES
+         Structured categorization of programming languages, tools, and platforms.
+         ====================================================================== -->
+    <section class="section skills-section" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <h2 class="section-title" id="skills-title">Skills &amp; Technologies</h2>
+        <p class="section-subtitle">[Technologies, tools, and technical competencies you actively work with.]</p>
+
+        <div class="skills-grid">
+          <!-- Category 1: Languages -->
+          <div class="skill-category">
+            <h3 class="skill-category-title">Languages</h3>
+            <ul class="skill-list">
+              <li class="skill-item">[e.g. JavaScript (ES6+)]</li>
+              <li class="skill-item">[e.g. HTML5 &amp; CSS3]</li>
+              <li class="skill-item">[e.g. Python]</li>
+              <li class="skill-item">[e.g. C / C++]</li>
+            </ul>
+          </div>
+
+          <!-- Category 2: Frameworks & Libraries -->
+          <div class="skill-category">
+            <h3 class="skill-category-title">Frameworks &amp; Libraries</h3>
+            <ul class="skill-list">
+              <li class="skill-item">[e.g. Node.js]</li>
+              <li class="skill-item">[e.g. Express]</li>
+              <li class="skill-item">[Additional frameworks you are learning]</li>
+            </ul>
+          </div>
+
+          <!-- Category 3: Tools & Platforms -->
+          <div class="skill-category">
+            <h3 class="skill-category-title">Tools &amp; Platforms</h3>
+            <ul class="skill-list">
+              <li class="skill-item">Git &amp; GitHub</li>
+              <li class="skill-item">VS Code</li>
+              <li class="skill-item">Linux / Command Line</li>
+              <li class="skill-item">[e.g. Postman, Docker, or Vercel]</li>
+            </ul>
+          </div>
+
+          <!-- Category 4: Fundamentals -->
+          <div class="skill-category">
+            <h3 class="skill-category-title">Core Fundamentals</h3>
+            <ul class="skill-list">
+              <li class="skill-item">Responsive Web Design</li>
+              <li class="skill-item">Data Structures &amp; Algorithms</li>
+              <li class="skill-item">RESTful APIs</li>
+              <li class="skill-item">Semantic HTML &amp; Accessibility</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         5. FEATURED PROJECTS
+         Cards highlighting selected projects, technical stacks, and code links.
+         ====================================================================== -->
+    <section class="section projects-section" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <h2 class="section-title" id="projects-title">Featured Projects</h2>
+        <p class="section-subtitle">[Practical applications built to solve problems, learn concepts, or explore ideas.]</p>
+
+        <div class="projects-grid">
+          <!-- Project Card 1 Placeholder -->
+          <article class="project-card">
+            <header class="project-card-header">
+              <span class="project-type">[Web Application]</span>
+              <h3 class="project-title">[Project Title 1]</h3>
+            </header>
+            <p class="project-description">
+              [Concise 2–3 sentence description explaining the purpose of the project, what problem it solves, and how you built it.]
+            </p>
+            <ul class="project-tech-list" aria-label="Technologies used">
+              <li class="tech-tag">[Tech 1]</li>
+              <li class="tech-tag">[Tech 2]</li>
+              <li class="tech-tag">[Tech 3]</li>
+            </ul>
+            <footer class="project-links">
+              <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">Source Code &rarr;</a>
+              <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">Live Demo &rarr;</a>
+            </footer>
+          </article>
+
+          <!-- Project Card 2 Placeholder -->
+          <article class="project-card">
+            <header class="project-card-header">
+              <span class="project-type">[Full-Stack / CLI Tool]</span>
+              <h3 class="project-title">[Project Title 2]</h3>
+            </header>
+            <p class="project-description">
+              [Concise 2–3 sentence description explaining the purpose of the project, what problem it solves, and how you built it.]
+            </p>
+            <ul class="project-tech-list" aria-label="Technologies used">
+              <li class="tech-tag">[Tech 1]</li>
+              <li class="tech-tag">[Tech 2]</li>
+              <li class="tech-tag">[Tech 3]</li>
+            </ul>
+            <footer class="project-links">
+              <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">Source Code &rarr;</a>
+              <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">Live Demo &rarr;</a>
+            </footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         6. HACKATHONS, ACHIEVEMENTS & OPEN SOURCE
+         Evidence of learning, community engagement, and technical initiative.
+         ====================================================================== -->
+    <section class="section achievements-section" id="achievements" aria-labelledby="achievements-title">
+      <div class="container">
+        <h2 class="section-title" id="achievements-title">Hackathons &amp; Contributions</h2>
+        <p class="section-subtitle">[Events, coding competitions, and open-source contributions.]</p>
+
+        <div class="achievements-grid">
+          <!-- Item 1 Placeholder -->
+          <article class="achievement-card">
+            <span class="achievement-meta">[Month Year] &bull; [Hackathon / Event Name]</span>
+            <h3 class="achievement-title">[Achievement / Project Title]</h3>
+            <p class="achievement-description">
+              [Brief summary of what you built in the sprint, your team role, or any awards / honorable mentions received.]
+            </p>
+          </article>
+
+          <!-- Item 2 Placeholder -->
+          <article class="achievement-card">
+            <span class="achievement-meta">[Month Year] &bull; Open-Source</span>
+            <h3 class="achievement-title">[Repository or Project Contributed To]</h3>
+            <p class="achievement-description">
+              [Brief summary of what you contributed, such as fixing an issue, writing tests, or improving documentation.]
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         7. CONTACT SECTION
+         Accessible direct communication options (usable with or without JS).
+         ====================================================================== -->
+    <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 class="section-title" id="contact-title">Get in Touch</h2>
+        <p class="section-subtitle">[I am open to discussions about internship opportunities, collaborations, or hackathons.]</p>
+
+        <div class="contact-card">
+          <p class="contact-lead">
+            The easiest way to reach me is directly via email or by connecting on professional platforms.
+          </p>
+          <div class="contact-methods">
+            <a href="mailto:your.email@example.com" class="btn btn-primary">Send an Email</a>
+          </div>
+          <ul class="contact-links" aria-label="Social and professional links">
+            <li><a href="https://github.com/[your-username]" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://linkedin.com/in/[your-username]" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://x.com/[your-username]" target="_blank" rel="noopener noreferrer">Twitter / X</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       8. FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <p class="footer-copy">
+        &copy; 2026 [Your Name]. Built with semantic HTML, CSS, and vanilla JavaScript.
+      </p>
+      <a href="#top" class="footer-back-to-top" aria-label="Back to top of page">Back to top &uarr;</a>
+    </div>
+  </footer>
+
+  <!-- Vanilla JavaScript: Loaded deferred for fast page parsing -->
+  <script src="js/main.js" defer></script>
+</body>
+</html>
+
