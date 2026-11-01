@@ -3,53 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Personal portfolio of [Your Name] — Student Developer building web projects, participating in hackathons, and contributing to open source.">
-  <title>[Your Name] | Developer Portfolio</title>
+  <meta name="description" content="Dhruv Jagtap — Aspiring Developer exploring Web Development and Artificial Intelligence. Computer Science Student at Newton School of Technology – ADYPU, Pune.">
+  <title>Dhruv Jagtap — Aspiring Developer | Exploring Web &amp; AI</title>
 
-  <!-- Main Stylesheet (CSS Custom Properties Design System) -->
+  <!-- Google Fonts: Space Grotesk & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet (INK / ACID Design System) -->
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="editorial-body">
 
-  <!-- Accessible Skip Link: Allows keyboard/screen reader users to jump directly to the main content -->
+  <!-- Accessible Skip Link -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Ambient Editorial Grid Background -->
+  <div class="editorial-canvas-grid" aria-hidden="true">
+    <div class="grid-columns">
+      <span class="grid-line"></span>
+      <span class="grid-line"></span>
+      <span class="grid-line"></span>
+      <span class="grid-line"></span>
+    </div>
+  </div>
 
   <!-- ========================================================================
        1. NAVIGATION BAR
-       Works natively without JavaScript via standard anchor links.
-       JavaScript progressively enhances this with a mobile drawer toggle.
+       Architectural, minimal editorial top bar with choreographed entrance.
        ======================================================================== -->
   <header class="site-header" id="top">
-    <div class="container nav-container">
-      <a href="#hero" class="nav-logo" aria-label="Home">
-        <span class="logo-symbol">&lt;/&gt;</span>
-        <span class="logo-text">[Your Name]</span>
+    <div class="header-inner">
+      
+      <!-- Brand Monogram -->
+      <a href="#hero" class="nav-brand" aria-label="Dhruv Jagtap — Home">
+        <span class="brand-glyph" aria-hidden="true">&sect;</span>
+        <span class="brand-text">DHRUV JAGTAP</span>
+        <span class="brand-role">// DEV</span>
       </a>
 
-      <!-- Mobile navigation toggle button (progressive enhancement) -->
-      <button 
-        type="button" 
-        class="nav-toggle" 
-        id="nav-toggle" 
-        aria-controls="nav-menu" 
-        aria-expanded="false" 
-        aria-label="Toggle navigation menu"
-        hidden
-      >
-        <span class="hamburger-bar"></span>
-        <span class="hamburger-bar"></span>
-        <span class="hamburger-bar"></span>
-      </button>
-
+      <!-- Center Editorial Navigation Links -->
       <nav class="site-nav" id="nav-menu" aria-label="Primary navigation">
         <ul class="nav-list">
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#achievements" class="nav-link">Achievements</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="#hero" class="nav-link" data-nav="hero"><span class="nav-num">00</span>Home</a></li>
+          <li><a href="#about" class="nav-link" data-nav="about"><span class="nav-num">01</span>About</a></li>
+          <li><a href="#exploring" class="nav-link" data-nav="exploring"><span class="nav-num">02</span>Exploring</a></li>
+          <li><a href="#skills" class="nav-link" data-nav="skills"><span class="nav-num">03</span>Skills</a></li>
+          <li><a href="#experience" class="nav-link" data-nav="experience"><span class="nav-num">04</span>Experience</a></li>
+          <li><a href="#beyond-code" class="nav-link" data-nav="beyond-code"><span class="nav-num">05</span>Beyond Code</a></li>
+          <li><a href="#contact" class="nav-link" data-nav="contact"><span class="nav-num">06</span>Contact</a></li>
         </ul>
       </nav>
+
+      <!-- Right Editorial Status & Mobile Toggle -->
+      <div class="header-actions">
+        <div class="status-indicator" aria-label="Location: Pune, India">
+          <span class="status-pip" aria-hidden="true"></span>
+          <span class="status-label">PUNE, IN // IST</span>
+        </div>
+
+        <!-- Accessible Mobile Toggle Button -->
+        <button 
+          type="button" 
+          class="nav-toggle" 
+          id="nav-toggle" 
+          aria-controls="nav-menu" 
+          aria-expanded="false" 
+          aria-label="Toggle navigation menu"
+          hidden
+        >
+          <span class="toggle-icon" aria-hidden="true">
+            <span class="toggle-stroke stroke-top"></span>
+            <span class="toggle-stroke stroke-bottom"></span>
+          </span>
+          <span class="toggle-text">MENU</span>
+        </button>
+      </div>
+
     </div>
   </header>
 
@@ -59,229 +90,669 @@
   <main id="main-content">
 
     <!-- ======================================================================
-         2. HERO SECTION
-         Clear name, value proposition/headline, intro, and call-to-actions.
+         2. HERO SECTION — ASYMMETRICAL EDITORIAL COMPOSITION
+         Choreographed Page-Load Entrance with Kinetic Typography
          ====================================================================== -->
     <section class="section hero-section" id="hero" aria-labelledby="hero-title">
-      <div class="container hero-container">
-        <div class="hero-content">
-          <p class="hero-greeting">Hi, I'm</p>
-          <h1 class="hero-title" id="hero-title">[Your Name]</h1>
-          <p class="hero-headline">[Your Professional Headline / Student Developer]</p>
-          <p class="hero-intro">
-            [Brief 1–2 sentence introduction about what you love to build, your current educational or technical focus, and your passion for learning.]
-          </p>
-          <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary">Explore Projects</a>
-            <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+      <div class="editorial-container">
+        
+        <!-- Top Editorial Meta Kicker -->
+        <div class="hero-kicker-strip">
+          <div class="kicker-left">
+            <span class="kicker-id">REF // 00-HERO</span>
+            <span class="kicker-divider">&bull;</span>
+            <span class="kicker-desc">COMPUTER SCIENCE STUDENT &bull; BUILDING WITH CODE</span>
+          </div>
+          <div class="kicker-right">
+            <span class="kicker-coords">LOC // PUNE, INDIA &bull; IST (UTC+5:30)</span>
           </div>
         </div>
+
+        <!-- Main Hero Composition: Headline on Left, Technical Construct on Right -->
+        <div class="hero-grid">
+          
+          <!-- LEFT: Expressive Editorial Typography & Identity -->
+          <div class="hero-left">
+            <p class="hero-greeting">
+              <span class="greeting-bracket">[</span>HELLO WORLD<span class="greeting-bracket">]</span>
+              <span class="greeting-name">I'M DHRUV JAGTAP</span>
+            </p>
+
+            <!-- Line-by-Line Kinetic Typography with Overflow Clipping -->
+            <h1 class="hero-headline" id="hero-title">
+              <span class="headline-mask">
+                <span class="headline-row row-top">
+                  <span class="text-solid">ASPIRING</span>
+                  <span class="text-stroke">DEVELOPER</span>
+                </span>
+              </span>
+              <span class="headline-mask">
+                <span class="headline-row row-mid">
+                  <span class="text-acid">EXPLORING</span>
+                  <span class="text-solid">WEB &amp; AI.</span>
+                </span>
+              </span>
+              <span class="headline-mask">
+                <span class="headline-row row-bot">
+                  <span class="text-solid">BUILDING WITH CODE.</span>
+                </span>
+              </span>
+            </h1>
+
+            <div class="hero-bio-lockup">
+              <span class="bio-indicator-line" aria-hidden="true"></span>
+              <p class="hero-lead">
+                Future Full Stack Developer and AI Enthusiast studying Computer Science at Newton School of Technology – ADYPU, Pune. Focused on strengthening programming foundations, learning by building, and turning ideas into useful digital products.
+              </p>
+            </div>
+
+            <!-- Two High-Contrast Editorial CTAs -->
+            <div class="hero-cta-group">
+              <a href="#contact" class="btn btn-acid">
+                <span class="btn-caption">GET IN TOUCH</span>
+                <svg class="btn-arrow-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M1 13L13 1M13 1H3M13 1V11" stroke="currentColor" stroke-width="2" stroke-linecap="square"/>
+                </svg>
+              </a>
+              <!-- Non-broken, clearly inactive Resume button -->
+              <button type="button" class="btn btn-outline btn-coming-soon" aria-disabled="true" title="Resume is currently being prepared and will be available soon">
+                <span class="btn-caption">DOWNLOAD RESUME</span>
+                <span class="btn-status-tag" aria-hidden="true">COMING SOON</span>
+              </button>
+            </div>
+
+            <!-- Monospace Technical Social Deck -->
+            <div class="hero-social-deck">
+              <span class="deck-index-label">DIRECT_LINKS //</span>
+              <div class="deck-links">
+                <a href="https://github.com/Dhruv269" class="deck-item" target="_blank" rel="noopener noreferrer" aria-label="Dhruv Jagtap's GitHub Profile">
+                  <span class="deck-num">01</span>
+                  <span class="deck-name">GITHUB</span>
+                  <span class="deck-diag" aria-hidden="true">&nearr;</span>
+                </a>
+                <a href="https://www.linkedin.com/in/dhruv-g-jagtap/" class="deck-item" target="_blank" rel="noopener noreferrer" aria-label="Dhruv Jagtap's LinkedIn Profile">
+                  <span class="deck-num">02</span>
+                  <span class="deck-name">LINKEDIN</span>
+                  <span class="deck-diag" aria-hidden="true">&nearr;</span>
+                </a>
+                <a href="mailto:dhruvjagtap269@gmail.com" class="deck-item" aria-label="Send email to Dhruv Jagtap">
+                  <span class="deck-num">03</span>
+                  <span class="deck-name">EMAIL</span>
+                  <span class="deck-diag" aria-hidden="true">&nearr;</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Bespoke Editorial Graphic Construct (SVG & CSS Architectural Composition) -->
+          <div class="hero-right" id="hero-construct-anchor" aria-hidden="true">
+            <div class="editorial-construct" id="editorial-construct">
+              
+              <!-- Layer 1: Technical Coordinate Plane & Caliper Lines (Pure SVG with stroke animation) -->
+              <svg class="construct-blueprint" viewBox="0 0 460 460" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Precision Drafting Grid Axes -->
+                <line x1="20" y1="230" x2="440" y2="230" stroke="#262626" stroke-width="1" stroke-dasharray="3 3"/>
+                <line x1="230" y1="20" x2="230" y2="440" stroke="#262626" stroke-width="1" stroke-dasharray="3 3"/>
+                
+                <!-- Concentric Drafting Circles with Motion System -->
+                <circle cx="230" cy="230" r="200" stroke="#222222" stroke-width="1" class="svg-stroke-outer"/>
+                <circle cx="230" cy="230" r="160" stroke="#333333" stroke-width="1" stroke-dasharray="4 4" class="anim-spin-cw"/>
+                <circle cx="230" cy="230" r="110" stroke="#444444" stroke-width="1" class="svg-stroke-inner"/>
+                <circle cx="230" cy="230" r="60" stroke="#262626" stroke-width="1"/>
+                
+                <!-- Angle Ticks & Compass Markers -->
+                <line x1="230" y1="22" x2="230" y2="34" stroke="#D6FF3F" stroke-width="2"/>
+                <line x1="438" y1="230" x2="426" y2="230" stroke="#858585" stroke-width="1.5"/>
+                <line x1="230" y1="438" x2="230" y2="426" stroke="#858585" stroke-width="1.5"/>
+                <line x1="22" y1="230" x2="34" y2="230" stroke="#858585" stroke-width="1.5"/>
+
+                <!-- 45-degree Technical Drafting Axes -->
+                <line x1="90" y1="90" x2="370" y2="370" stroke="#1F1F1F" stroke-width="1"/>
+                <line x1="90" y1="370" x2="370" y2="90" stroke="#1F1F1F" stroke-width="1"/>
+
+                <!-- Geometric Polygon Diamond Overlay -->
+                <polygon points="230,70 390,230 230,390 70,230" stroke="#2A2A2A" stroke-width="1.2" class="anim-spin-ccw"/>
+                
+                <!-- Acid-Lime Precision Point Callouts -->
+                <circle cx="230" cy="70" r="3.5" fill="#D6FF3F" class="pulse-callout"/>
+                <circle cx="390" cy="230" r="3" fill="#D6FF3F"/>
+                <circle cx="70" cy="230" r="3" fill="#FF5C35"/>
+              </svg>
+
+              <!-- Layer 2: Editorial Technical HUD Plate -->
+              <div class="construct-hud-plate">
+                <div class="plate-header">
+                  <div class="plate-title">
+                    <span class="hud-square"></span>
+                    <span class="hud-label">DEV_INDEX // DHRUV</span>
+                  </div>
+                  <span class="plate-tag">[ACTIVE]</span>
+                </div>
+                <div class="plate-content">
+                  <div class="plate-row">
+                    <span class="row-term">INSTITUTION</span>
+                    <span class="row-dots">................</span>
+                    <span class="row-def text-white">NST_ADYPU</span>
+                  </div>
+                  <div class="plate-row">
+                    <span class="row-term">PROGRAM</span>
+                    <span class="row-dots">................</span>
+                    <span class="row-def text-acid">CS_AIML_Y1</span>
+                  </div>
+                  <div class="plate-row">
+                    <span class="row-term">LOCATION</span>
+                    <span class="row-dots">................</span>
+                    <span class="row-def text-white">PUNE_IN</span>
+                  </div>
+                </div>
+                <div class="plate-footer">
+                  <span class="plate-geo">18.52° N &bull; 73.85° E</span>
+                  <span class="plate-rev">&Delta; 2026.BUILD</span>
+                </div>
+              </div>
+
+              <!-- Layer 3: Floating Focus Tag (Acid Accent) -->
+              <div class="construct-floating-chip">
+                <div class="chip-pin"></div>
+                <div class="chip-data">
+                  <span class="chip-kicker">CURRENT FOCUS</span>
+                  <span class="chip-title">Web Development &amp; AI</span>
+                </div>
+              </div>
+
+              <!-- Editorial Corner Crosshairs -->
+              <span class="construct-cross cross-tl">+</span>
+              <span class="construct-cross cross-tr">+</span>
+              <span class="construct-cross cross-bl">+</span>
+              <span class="construct-cross cross-br">+</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Section Bottom Divider & Editorial Barcode/Pagination -->
+        <div class="hero-bottom-bar">
+          <div class="bar-left">
+            <span class="bar-ticker">SCROLL_DOWN &darr;</span>
+          </div>
+          <div class="bar-center">
+            <span class="editorial-page-num">[ 00 / 06 ]</span>
+          </div>
+          <div class="bar-right">
+            <span class="bar-copyright">&copy; 2026 DHRUV JAGTAP</span>
+          </div>
+        </div>
+
       </div>
     </section>
 
     <!-- ======================================================================
-         3. ABOUT ME
-         Background, current study/learning focus, and developer philosophy.
+         3. ABOUT SECTION — EDITORIAL PROFILE
          ====================================================================== -->
     <section class="section about-section" id="about" aria-labelledby="about-title">
-      <div class="container">
-        <h2 class="section-title" id="about-title">About Me</h2>
-        <p class="section-subtitle">[A short overview of who you are and where you are heading.]</p>
+      <div class="editorial-container">
         
-        <div class="about-content">
-          <div class="about-text">
-            <p>
-              [Paragraph 1: Describe your background as a student developer, your university/degree program, or self-directed learning journey.]
+        <!-- Section Header Ledger -->
+        <header class="section-ledger" data-reveal>
+          <div class="ledger-index">01 // PROFILE</div>
+          <div class="ledger-divider"></div>
+          <div class="ledger-category">BACKGROUND &amp; PERSPECTIVE</div>
+        </header>
+
+        <div class="about-grid">
+          <!-- Left Column: Prominent Statement & Metadata Card -->
+          <div class="about-aside" data-reveal data-reveal-delay="1">
+            <h2 class="about-lead-statement" id="about-title">
+              FIRST-YEAR CS (AI/ML) AT NEWTON SCHOOL OF TECHNOLOGY – ADYPU.
+            </h2>
+
+            <div class="about-data-card">
+              <div class="data-row">
+                <span class="data-key">NAME</span>
+                <span class="data-val text-white">Dhruv Jagtap</span>
+              </div>
+              <div class="data-row">
+                <span class="data-key">EDUCATION</span>
+                <span class="data-val">B.Tech in Computer Science (AI/ML)</span>
+              </div>
+              <div class="data-row">
+                <span class="data-key">ACADEMIC YEAR</span>
+                <span class="data-val text-acid">First Year</span>
+              </div>
+              <div class="data-row">
+                <span class="data-key">INSTITUTION</span>
+                <span class="data-val">Newton School of Technology – ADYPU, Pune</span>
+              </div>
+              <div class="data-row">
+                <span class="data-key">LOCATION</span>
+                <span class="data-val">Pune, India &bull; IST (UTC+5:30)</span>
+              </div>
+              <div class="data-row">
+                <span class="data-key">SPECIALIZATION</span>
+                <span class="data-val text-acid">Future Full Stack Developer | AI Enthusiast</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Biography Copy -->
+          <div class="about-narrative" data-reveal data-reveal-delay="2">
+            <p class="narrative-p lead-p">
+              I'm Dhruv, a first-year Computer Science student specializing in Artificial Intelligence and Machine Learning at Newton School of Technology – ADYPU, Pune.
             </p>
-            <p>
-              [Paragraph 2: Mention what drives you — building practical applications, collaborating on software, and exploring emerging web technologies.]
+            <p class="narrative-p">
+              I'm exploring full-stack development and Artificial Intelligence while strengthening my foundations in Python and programming. I'm interested in turning ideas into useful digital products and eventually building products of my own.
             </p>
+            <p class="narrative-p">
+              I believe in learning by building, staying curious, and turning ideas into meaningful digital experiences.
+            </p>
+
+            <div class="about-quote-strip">
+              <span class="quote-symbol">&ldquo;</span>
+              <span class="quote-text">Learning by building, staying curious, and turning ideas into meaningful digital products.</span>
+            </div>
           </div>
         </div>
+
       </div>
     </section>
 
     <!-- ======================================================================
-         4. SKILLS & TECHNOLOGIES
-         Structured categorization of programming languages, tools, and platforms.
+         4. CURRENTLY EXPLORING SECTION
+         Highlighting 4 core learning frontiers without claiming mastery
+         ====================================================================== -->
+    <section class="section exploring-section" id="exploring" aria-labelledby="exploring-title">
+      <div class="editorial-container">
+        
+        <!-- Section Header Ledger -->
+        <header class="section-ledger" data-reveal>
+          <div class="ledger-index">02 // EXPLORING</div>
+          <div class="ledger-divider"></div>
+          <div class="ledger-category">CURRENT LEARNING INTERESTS</div>
+        </header>
+
+        <div class="exploring-intro-wrap" data-reveal data-reveal-delay="1">
+          <h2 class="section-headline" id="exploring-title">
+            CURRENTLY EXPLORING.
+          </h2>
+          <p class="section-subtitle-editorial">
+            Active learning frontiers and technical domains I am currently studying and experimenting with.
+          </p>
+        </div>
+
+        <div class="exploring-grid">
+          
+          <!-- Area 1: Python -->
+          <article class="exploring-card" data-reveal data-reveal-delay="1">
+            <div class="exploring-card-top">
+              <span class="exploring-num">01 //</span>
+              <span class="exploring-badge badge-acid">CORE_FOUNDATION</span>
+            </div>
+            <h3 class="exploring-title">Python</h3>
+            <p class="exploring-desc">
+              Strengthening programming fundamentals, algorithmic thinking, and problem-solving through hands-on practice.
+            </p>
+          </article>
+
+          <!-- Area 2: Web Development -->
+          <article class="exploring-card" data-reveal data-reveal-delay="2">
+            <div class="exploring-card-top">
+              <span class="exploring-num">02 //</span>
+              <span class="exploring-badge badge-acid">FRONTEND_BASE</span>
+            </div>
+            <h3 class="exploring-title">Web Development</h3>
+            <p class="exploring-desc">
+              Learning the core foundations of building for the web, semantic structures, and responsive user experiences.
+            </p>
+          </article>
+
+          <!-- Area 3: Full-Stack Development -->
+          <article class="exploring-card" data-reveal data-reveal-delay="1">
+            <div class="exploring-card-top">
+              <span class="exploring-num">03 //</span>
+              <span class="exploring-badge badge-orange">SYSTEMS_INTEGRATION</span>
+            </div>
+            <h3 class="exploring-title">Full-Stack Development</h3>
+            <p class="exploring-desc">
+              Exploring how frontend interfaces and backend services collaborate to create cohesive, end-to-end applications.
+            </p>
+          </article>
+
+          <!-- Area 4: Artificial Intelligence -->
+          <article class="exploring-card" data-reveal data-reveal-delay="2">
+            <div class="exploring-card-top">
+              <span class="exploring-num">04 //</span>
+              <span class="exploring-badge badge-acid">SPECIALIZATION</span>
+            </div>
+            <h3 class="exploring-title">Artificial Intelligence</h3>
+            <p class="exploring-desc">
+              Exploring foundational AI concepts, modern AI tooling workflows, and practical applications in software.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         5. TECHNICAL SKILLS SECTION — VERIFIED TOOLING & EXPOSURE
+         Only technologies and tools Dhruv has actually used or has exposure to
          ====================================================================== -->
     <section class="section skills-section" id="skills" aria-labelledby="skills-title">
-      <div class="container">
-        <h2 class="section-title" id="skills-title">Skills &amp; Technologies</h2>
-        <p class="section-subtitle">[Technologies, tools, and technical competencies you actively work with.]</p>
+      <div class="editorial-container">
+        
+        <!-- Section Header Ledger -->
+        <header class="section-ledger" data-reveal>
+          <div class="ledger-index">03 // CAPABILITIES</div>
+          <div class="ledger-divider"></div>
+          <div class="ledger-category">TOOLING &amp; PRACTICAL EXPOSURE</div>
+        </header>
 
-        <div class="skills-grid">
-          <!-- Category 1: Languages -->
-          <div class="skill-category">
-            <h3 class="skill-category-title">Languages</h3>
-            <ul class="skill-list">
-              <li class="skill-item">[e.g. JavaScript (ES6+)]</li>
-              <li class="skill-item">[e.g. HTML5 &amp; CSS3]</li>
-              <li class="skill-item">[e.g. Python]</li>
-              <li class="skill-item">[e.g. C / C++]</li>
-            </ul>
-          </div>
-
-          <!-- Category 2: Frameworks & Libraries -->
-          <div class="skill-category">
-            <h3 class="skill-category-title">Frameworks &amp; Libraries</h3>
-            <ul class="skill-list">
-              <li class="skill-item">[e.g. Node.js]</li>
-              <li class="skill-item">[e.g. Express]</li>
-              <li class="skill-item">[Additional frameworks you are learning]</li>
-            </ul>
-          </div>
-
-          <!-- Category 3: Tools & Platforms -->
-          <div class="skill-category">
-            <h3 class="skill-category-title">Tools &amp; Platforms</h3>
-            <ul class="skill-list">
-              <li class="skill-item">Git &amp; GitHub</li>
-              <li class="skill-item">VS Code</li>
-              <li class="skill-item">Linux / Command Line</li>
-              <li class="skill-item">[e.g. Postman, Docker, or Vercel]</li>
-            </ul>
-          </div>
-
-          <!-- Category 4: Fundamentals -->
-          <div class="skill-category">
-            <h3 class="skill-category-title">Core Fundamentals</h3>
-            <ul class="skill-list">
-              <li class="skill-item">Responsive Web Design</li>
-              <li class="skill-item">Data Structures &amp; Algorithms</li>
-              <li class="skill-item">RESTful APIs</li>
-              <li class="skill-item">Semantic HTML &amp; Accessibility</li>
-            </ul>
-          </div>
+        <div class="skills-intro-wrap" data-reveal data-reveal-delay="1">
+          <h2 class="section-headline" id="skills-title">
+            TECHNICAL SKILLS.
+          </h2>
+          <p class="section-subtitle-editorial">
+            Technologies and tools I have practical exposure to and use in my current coding and learning workflows.
+          </p>
         </div>
+
+        <div class="skills-editorial-layout">
+          
+          <!-- Column 1: Programming Language & Developer Tools -->
+          <div class="skills-ledger-column" data-reveal data-reveal-delay="1">
+            
+            <!-- Group 1: Programming Language -->
+            <div class="column-header">
+              <div class="header-indicator dot-acid"></div>
+              <h3 class="column-title">PROGRAMMING LANGUAGE</h3>
+              <span class="column-tag">CORE</span>
+            </div>
+
+            <div class="skills-table">
+              <div class="skill-row">
+                <span class="skill-num">01</span>
+                <span class="skill-name">Python</span>
+                <span class="skill-context">Beginner to Early Intermediate &bull; Problem Solving</span>
+              </div>
+            </div>
+
+            <!-- Group 2: Developer Tools -->
+            <div class="column-header column-header-secondary">
+              <div class="header-indicator dot-acid"></div>
+              <h3 class="column-title">DEVELOPER TOOLS</h3>
+              <span class="column-tag">ENVIRONMENT</span>
+            </div>
+
+            <div class="skills-table">
+              <div class="skill-row">
+                <span class="skill-num">01</span>
+                <span class="skill-name">Git</span>
+                <span class="skill-context">Version Control &amp; CLI</span>
+              </div>
+              <div class="skill-row">
+                <span class="skill-num">02</span>
+                <span class="skill-name">GitHub</span>
+                <span class="skill-context">Repositories &amp; Collaboration</span>
+              </div>
+              <div class="skill-row">
+                <span class="skill-num">03</span>
+                <span class="skill-name">Visual Studio Code</span>
+                <span class="skill-context">Primary Code Editor</span>
+              </div>
+              <div class="skill-row">
+                <span class="skill-num">04</span>
+                <span class="skill-name">Antigravity IDE</span>
+                <span class="skill-context">AI-Assisted Development</span>
+              </div>
+              <div class="skill-row">
+                <span class="skill-num">05</span>
+                <span class="skill-name">Terminal / CLI</span>
+                <span class="skill-context">Command Line Navigation</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Column 2: AI Tools & Learning Approach -->
+          <div class="skills-ledger-column" data-reveal data-reveal-delay="2">
+            
+            <div class="column-header">
+              <div class="header-indicator dot-orange"></div>
+              <h3 class="column-title">AI TOOLS</h3>
+              <span class="column-tag">WORKFLOW</span>
+            </div>
+
+            <div class="skills-table">
+              <div class="skill-row">
+                <span class="skill-num">01</span>
+                <span class="skill-name">ChatGPT</span>
+                <span class="skill-context">Prompting, Concept Exploration &amp; Debugging</span>
+              </div>
+              <div class="skill-row">
+                <span class="skill-num">02</span>
+                <span class="skill-name">Gemini</span>
+                <span class="skill-context">Research, Technical Summaries &amp; Code Analysis</span>
+              </div>
+            </div>
+
+            <!-- Technical Disclosure Note -->
+            <div class="skills-disclosure-block">
+              <div class="disclosure-header">
+                <span class="disclosure-glyph">&bull;</span>
+                <span class="disclosure-title">HONEST PROFICIENCY NOTE</span>
+              </div>
+              <p class="disclosure-text">
+                I list only technologies and tools I actively utilize. My Python level is currently between beginner and early intermediate as I strengthen core fundamentals before expanding into advanced stacks.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
     </section>
 
     <!-- ======================================================================
-         5. FEATURED PROJECTS
-         Cards highlighting selected projects, technical stacks, and code links.
+         6. HACKATHON & EXPERIENCE — GENUINE ACTIVITIES RECORD
          ====================================================================== -->
-    <section class="section projects-section" id="projects" aria-labelledby="projects-title">
-      <div class="container">
-        <h2 class="section-title" id="projects-title">Featured Projects</h2>
-        <p class="section-subtitle">[Practical applications built to solve problems, learn concepts, or explore ideas.]</p>
+    <section class="section journey-section" id="experience" aria-labelledby="experience-title">
+      <div class="editorial-container">
+        
+        <!-- Section Header Ledger -->
+        <header class="section-ledger" data-reveal>
+          <div class="ledger-index">04 // EXPERIENCE</div>
+          <div class="ledger-divider"></div>
+          <div class="ledger-category">HACKATHONS &amp; ACTIVITIES</div>
+        </header>
 
-        <div class="projects-grid">
-          <!-- Project Card 1 Placeholder -->
-          <article class="project-card">
-            <header class="project-card-header">
-              <span class="project-type">[Web Application]</span>
-              <h3 class="project-title">[Project Title 1]</h3>
-            </header>
-            <p class="project-description">
-              [Concise 2–3 sentence description explaining the purpose of the project, what problem it solves, and how you built it.]
-            </p>
-            <ul class="project-tech-list" aria-label="Technologies used">
-              <li class="tech-tag">[Tech 1]</li>
-              <li class="tech-tag">[Tech 2]</li>
-              <li class="tech-tag">[Tech 3]</li>
-            </ul>
-            <footer class="project-links">
-              <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">Source Code &rarr;</a>
-              <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">Live Demo &rarr;</a>
-            </footer>
-          </article>
-
-          <!-- Project Card 2 Placeholder -->
-          <article class="project-card">
-            <header class="project-card-header">
-              <span class="project-type">[Full-Stack / CLI Tool]</span>
-              <h3 class="project-title">[Project Title 2]</h3>
-            </header>
-            <p class="project-description">
-              [Concise 2–3 sentence description explaining the purpose of the project, what problem it solves, and how you built it.]
-            </p>
-            <ul class="project-tech-list" aria-label="Technologies used">
-              <li class="tech-tag">[Tech 1]</li>
-              <li class="tech-tag">[Tech 2]</li>
-              <li class="tech-tag">[Tech 3]</li>
-            </ul>
-            <footer class="project-links">
-              <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">Source Code &rarr;</a>
-              <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">Live Demo &rarr;</a>
-            </footer>
-          </article>
+        <div class="journey-intro-wrap" data-reveal data-reveal-delay="1">
+          <h2 class="section-headline" id="experience-title">
+            HACKATHONS &amp; EXPERIENCE.
+          </h2>
+          <p class="section-subtitle-editorial">
+            Early milestones, sprint participation, and academic journey as a first-year computer science student.
+          </p>
         </div>
+
+        <div class="journey-timeline">
+          
+          <!-- Event 01: Hacktoberfest -->
+          <article class="timeline-row" data-reveal>
+            <div class="time-col">
+              <span class="time-year">2024</span>
+              <span class="time-season">OCTOBER</span>
+            </div>
+            <div class="category-col">
+              <span class="category-badge badge-acid">HACKATHON</span>
+            </div>
+            <div class="content-col">
+              <h3 class="milestone-title">Hacktoberfest</h3>
+              <p class="milestone-desc">
+                Participated in Hacktoberfest as my first hackathon experience. Worked on building a small website during the sprint to explore frontend basics and collaborative development practices.
+              </p>
+              <span class="milestone-role">EXPERIENCE // First Hackathon Exploration &bull; Web Sprint</span>
+            </div>
+          </article>
+
+          <!-- Event 02: Academic Journey -->
+          <article class="timeline-row" data-reveal data-reveal-delay="1">
+            <div class="time-col">
+              <span class="time-year">2024 – PRESENT</span>
+              <span class="time-season">ACADEMIC JOURNEY</span>
+            </div>
+            <div class="category-col">
+              <span class="category-badge badge-orange">UNDERGRAD</span>
+            </div>
+            <div class="content-col">
+              <h3 class="milestone-title">B.Tech in Computer Science (AI/ML) — Year 1</h3>
+              <p class="milestone-desc">
+                Commenced undergraduate studies at Newton School of Technology – ADYPU, Pune. Focusing on foundational programming with Python, discrete mathematics, and software development essentials.
+              </p>
+              <span class="milestone-role">INSTITUTION // Newton School of Technology – ADYPU, Pune</span>
+            </div>
+          </article>
+
+        </div>
+
       </div>
     </section>
 
     <!-- ======================================================================
-         6. HACKATHONS, ACHIEVEMENTS & OPEN SOURCE
-         Evidence of learning, community engagement, and technical initiative.
+         7. BEYOND THE CODE SECTION — PERSONAL PURSUITS
+         Cricket & Music: Subtle and consistent with editorial design
          ====================================================================== -->
-    <section class="section achievements-section" id="achievements" aria-labelledby="achievements-title">
-      <div class="container">
-        <h2 class="section-title" id="achievements-title">Hackathons &amp; Contributions</h2>
-        <p class="section-subtitle">[Events, coding competitions, and open-source contributions.]</p>
+    <section class="section beyond-code-section" id="beyond-code" aria-labelledby="beyond-code-title">
+      <div class="editorial-container">
+        
+        <!-- Section Header Ledger -->
+        <header class="section-ledger" data-reveal>
+          <div class="ledger-index">05 // PURSUITS</div>
+          <div class="ledger-divider"></div>
+          <div class="ledger-category">BEYOND THE TERMINAL</div>
+        </header>
 
-        <div class="achievements-grid">
-          <!-- Item 1 Placeholder -->
-          <article class="achievement-card">
-            <span class="achievement-meta">[Month Year] &bull; [Hackathon / Event Name]</span>
-            <h3 class="achievement-title">[Achievement / Project Title]</h3>
-            <p class="achievement-description">
-              [Brief summary of what you built in the sprint, your team role, or any awards / honorable mentions received.]
-            </p>
-          </article>
-
-          <!-- Item 2 Placeholder -->
-          <article class="achievement-card">
-            <span class="achievement-meta">[Month Year] &bull; Open-Source</span>
-            <h3 class="achievement-title">[Repository or Project Contributed To]</h3>
-            <p class="achievement-description">
-              [Brief summary of what you contributed, such as fixing an issue, writing tests, or improving documentation.]
-            </p>
-          </article>
+        <div class="beyond-intro-wrap" data-reveal data-reveal-delay="1">
+          <h2 class="section-headline" id="beyond-code-title">
+            BEYOND THE CODE.
+          </h2>
+          <p class="section-subtitle-editorial">
+            Interests and activities that keep me energized, balanced, and inspired outside of programming.
+          </p>
         </div>
+
+        <div class="beyond-code-grid">
+          
+          <!-- Pursuit 1: Cricket -->
+          <article class="beyond-card" data-reveal data-reveal-delay="1">
+            <div class="beyond-card-header">
+              <span class="beyond-idx">01 //</span>
+              <span class="beyond-badge badge-acid">SPORT</span>
+            </div>
+            <h3 class="beyond-card-title">Cricket</h3>
+            <p class="beyond-card-desc">
+              Following competitive matches and playing with peers. Cricket teaches teamwork, discipline, reading pressure situations, and strategic adaptability.
+            </p>
+          </article>
+
+          <!-- Pursuit 2: Music -->
+          <article class="beyond-card" data-reveal data-reveal-delay="2">
+            <div class="beyond-card-header">
+              <span class="beyond-idx">02 //</span>
+              <span class="beyond-badge badge-orange">RHYTHM</span>
+            </div>
+            <h3 class="beyond-card-title">Music</h3>
+            <p class="beyond-card-desc">
+              Listening to varied genres for deep focus while coding and relaxation during downtime. A constant companion through learning sessions and creative exploration.
+            </p>
+          </article>
+
+        </div>
+
       </div>
     </section>
 
     <!-- ======================================================================
-         7. CONTACT SECTION
-         Accessible direct communication options (usable with or without JS).
+         8. CONTACT SECTION — DIRECT COMMUNICATION
          ====================================================================== -->
     <section class="section contact-section" id="contact" aria-labelledby="contact-title">
-      <div class="container">
-        <h2 class="section-title" id="contact-title">Get in Touch</h2>
-        <p class="section-subtitle">[I am open to discussions about internship opportunities, collaborations, or hackathons.]</p>
+      <div class="editorial-container">
+        
+        <!-- Section Header Ledger -->
+        <header class="section-ledger" data-reveal>
+          <div class="ledger-index">06 // TRANSMISSION</div>
+          <div class="ledger-divider"></div>
+          <div class="ledger-category">INITIATE CONVERSATION</div>
+        </header>
 
-        <div class="contact-card">
-          <p class="contact-lead">
-            The easiest way to reach me is directly via email or by connecting on professional platforms.
+        <div class="contact-editorial-box" data-reveal>
+          <!-- Subtle indication as requested: "Open to internship opportunities" -->
+          <span class="contact-kicker">OPEN TO INTERNSHIP OPPORTUNITIES</span>
+          
+          <h2 class="contact-giant-headline" id="contact-title">
+            GET IN TOUCH.
+          </h2>
+
+          <p class="contact-lead-text">
+            I am always glad to connect with fellow developers, mentors, and teams. Feel free to reach out directly via email or connect on LinkedIn and GitHub.
           </p>
-          <div class="contact-methods">
-            <a href="mailto:your.email@example.com" class="btn btn-primary">Send an Email</a>
+
+          <!-- Large Expressive Direct Email Mailto Link -->
+          <div class="contact-email-wrap">
+            <a href="mailto:dhruvjagtap269@gmail.com" class="giant-email-link" aria-label="Send email to dhruvjagtap269@gmail.com">
+              <span class="email-text">dhruvjagtap269@gmail.com</span>
+              <span class="email-arrow" aria-hidden="true">&rarr;</span>
+            </a>
           </div>
-          <ul class="contact-links" aria-label="Social and professional links">
-            <li><a href="https://github.com/[your-username]" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-            <li><a href="https://linkedin.com/in/[your-username]" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-            <li><a href="https://x.com/[your-username]" target="_blank" rel="noopener noreferrer">Twitter / X</a></li>
-          </ul>
+
+          <!-- Secondary Channels Ledger -->
+          <div class="contact-channels-ledger">
+            <div class="channel-item">
+              <span class="ch-label">GITHUB //</span>
+              <a href="https://github.com/Dhruv269" class="ch-link" target="_blank" rel="noopener noreferrer">github.com/Dhruv269 &nearr;</a>
+            </div>
+            <div class="channel-item">
+              <span class="ch-label">LINKEDIN //</span>
+              <a href="https://www.linkedin.com/in/dhruv-g-jagtap/" class="ch-link" target="_blank" rel="noopener noreferrer">linkedin.com/in/dhruv-g-jagtap &nearr;</a>
+            </div>
+            <div class="channel-item">
+              <span class="ch-label">LOCATION //</span>
+              <span class="ch-val">Pune, India &bull; IST (UTC+5:30)</span>
+            </div>
+          </div>
         </div>
+
       </div>
     </section>
 
   </main>
 
   <!-- ========================================================================
-       8. FOOTER
+       9. FOOTER
+       Minimal, architectural footer
        ======================================================================== -->
   <footer class="site-footer">
-    <div class="container footer-container">
-      <p class="footer-copy">
-        &copy; 2026 [Your Name]. Built with semantic HTML, CSS, and vanilla JavaScript.
-      </p>
-      <a href="#top" class="footer-back-to-top" aria-label="Back to top of page">Back to top &uarr;</a>
+    <div class="editorial-container">
+      <div class="footer-inner">
+        <div class="footer-left">
+          <span class="footer-symbol">&sect;</span>
+          <span class="footer-copy">Designed &amp; built by Dhruv Jagtap · 2026</span>
+        </div>
+        <div class="footer-center">
+          <span class="footer-specs">STACK // HTML5 &bull; CSS3 &bull; VANILLA JS</span>
+        </div>
+        <div class="footer-right">
+          <a href="#top" class="footer-top-link" aria-label="Return to top of page">
+            <span>BACK TO TOP</span>
+            <span class="top-arrow" aria-hidden="true">&uarr;</span>
+          </a>
+        </div>
+      </div>
     </div>
   </footer>
 
-  <!-- Vanilla JavaScript: Loaded deferred for fast page parsing -->
+  <!-- Vanilla JavaScript -->
   <script src="js/main.js" defer></script>
 </body>
 </html>
-
