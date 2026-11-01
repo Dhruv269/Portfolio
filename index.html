@@ -13,8 +13,160 @@
 
   <!-- Main Stylesheet (INK / ACID Design System) -->
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Early Preloader State Initialization (Prevents FOUC on First Session Visit) -->
+  <script>
+    try {
+      const isInspect = window.location.hash === '#sculpture';
+      const isSkip = window.location.hash === '#skip' || window.location.hash === '#preview';
+      if ((!sessionStorage.getItem('genesis_preloader_seen') && !window.matchMedia('(prefers-reduced-motion: reduce)').matches && !isSkip) || isInspect) {
+        document.documentElement.classList.add('genesis-loading');
+      }
+    } catch (e) {}
+  </script>
 </head>
 <body class="editorial-body">
+
+  <!-- ========================================================================
+       PROJECT: GENESIS — CINEMATIC PORTFOLIO PRELOADER
+       Full-Screen Abstract Fragmented Geometric Sculpture Experience
+       ======================================================================== -->
+  <div id="genesis-preloader" class="genesis-preloader" role="status" aria-live="polite" aria-label="Initializing portfolio experience">
+    
+    <!-- System Metadata: Top Left -->
+    <div class="genesis-corner genesis-corner-tl">
+      <span class="genesis-sys-id"><span class="genesis-desktop-only">GENESIS SYSTEM</span><span class="genesis-mobile-only">GENESIS</span> // 2026</span>
+      <span class="genesis-sys-sub">SYS_VER // 1.0.4 &bull; ARCHITECTURAL ENGINE</span>
+    </div>
+
+    <!-- System Metadata: Top Right -->
+    <div class="genesis-corner genesis-corner-tr">
+      <span class="genesis-status-dot" aria-hidden="true"></span>
+      <span class="genesis-sys-label"><span class="genesis-desktop-only">INITIALIZATION SEQUENCE</span><span class="genesis-mobile-only">INIT // 001</span></span>
+    </div>
+
+    <!-- System Metadata: Bottom Left -->
+    <div class="genesis-corner genesis-corner-bl">
+      <span class="genesis-coord"><span class="genesis-desktop-only">LAT 18.52° N &bull; LON 73.85° E</span><span class="genesis-mobile-only">PUNE_IN // 18.52° N</span></span>
+      <span class="genesis-origin">NODE // PUNE_IN</span>
+    </div>
+
+    <!-- System Metadata: Bottom Right -->
+    <div class="genesis-corner genesis-corner-br">
+      <span class="genesis-seq-code"><span class="genesis-desktop-only">REF // INITIALIZATION / 001</span><span class="genesis-mobile-only">REF // 001</span></span>
+    </div>
+
+    <!-- Central Sculpture Stage -->
+    <div class="genesis-sculpture-stage">
+      
+      <!-- Stage 01 Awakening: Central Beacon Point of Light -->
+      <div class="genesis-core-beacon" aria-hidden="true"></div>
+
+      <!-- Fragmented Geometric Sculpture Artwork -->
+      <svg class="genesis-svg" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="sculpt-grad-1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#242424"/>
+            <stop offset="100%" stop-color="#141414"/>
+          </linearGradient>
+          <linearGradient id="sculpt-grad-2" x1="0" y1="1" x2="1" y2="0">
+            <stop offset="0%" stop-color="#1c1c1c"/>
+            <stop offset="100%" stop-color="#282828"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Construction Calibration Guides -->
+        <g class="genesis-guides">
+          <circle cx="250" cy="250" r="220" stroke="#1F1F1F" stroke-width="1" class="guide-circle"/>
+          <circle cx="250" cy="250" r="160" stroke="#282828" stroke-width="1" stroke-dasharray="4 6" class="guide-circle-rot"/>
+          <circle cx="250" cy="250" r="100" stroke="#222222" stroke-width="1" class="guide-circle"/>
+          <line x1="30" y1="250" x2="470" y2="250" stroke="#222222" stroke-width="1" stroke-dasharray="3 3"/>
+          <line x1="250" y1="30" x2="250" y2="470" stroke="#222222" stroke-width="1" stroke-dasharray="3 3"/>
+          <line x1="90" y1="90" x2="410" y2="410" stroke="#1A1A1A" stroke-width="1"/>
+          <line x1="90" y1="410" x2="410" y2="90" stroke="#1A1A1A" stroke-width="1"/>
+        </g>
+
+        <!-- Dynamic Fragment Assembly: Controlled Chaos Converging to Center -->
+        <g class="genesis-fragments-assembly">
+          <!-- Fragment 1: Core Upper Diamond -->
+          <g class="sculpt-frag frag-1">
+            <polygon points="250,110 310,180 250,220 190,180" fill="url(#sculpt-grad-1)" stroke="#383838" stroke-width="1"/>
+          </g>
+          <!-- Fragment 2: Upper Right Acid Lime Wing (Translucent) -->
+          <g class="sculpt-frag frag-2">
+            <polygon points="310,180 380,160 350,240 250,220" fill="rgba(214,255,63,0.12)" stroke="#D6FF3F" stroke-width="1.5"/>
+          </g>
+          <!-- Fragment 3: Right Outer Spire -->
+          <g class="sculpt-frag frag-3">
+            <polygon points="380,160 410,230 350,240" fill="#161616" stroke="#2a2a2a" stroke-width="1"/>
+          </g>
+          <!-- Fragment 4: Center Heart Diamond (Vibrant Acid Lime) -->
+          <g class="sculpt-frag frag-4">
+            <polygon points="250,220 290,265 250,300 210,265" fill="#D6FF3F" stroke="#D6FF3F" stroke-width="1.5"/>
+          </g>
+          <!-- Fragment 5: Upper Left Signal Orange Wing (Translucent) -->
+          <g class="sculpt-frag frag-5">
+            <polygon points="250,110 190,180 150,230 210,210" fill="rgba(255,92,53,0.15)" stroke="#FF5C35" stroke-width="1.5"/>
+          </g>
+          <!-- Fragment 6: Left Outer Blade -->
+          <g class="sculpt-frag frag-6">
+            <polygon points="190,180 110,210 150,260 210,210" fill="#1A1A1A" stroke="#333333" stroke-width="1"/>
+          </g>
+          <!-- Fragment 7: Mid Left Shard -->
+          <g class="sculpt-frag frag-7">
+            <polygon points="150,260 170,320 210,265 250,300" fill="#171717" stroke="#2e2e2e" stroke-width="1"/>
+          </g>
+          <!-- Fragment 8: Lower Left Keel -->
+          <g class="sculpt-frag frag-8">
+            <polygon points="170,320 250,390 250,300" fill="url(#sculpt-grad-2)" stroke="#404040" stroke-width="1"/>
+          </g>
+          <!-- Fragment 9: Lower Right Signal Orange Keel -->
+          <g class="sculpt-frag frag-9">
+            <polygon points="250,300 250,390 320,340 290,265" fill="rgba(255,92,53,0.22)" stroke="#FF5C35" stroke-width="1.2"/>
+          </g>
+          <!-- Fragment 10: Mid Right Shield -->
+          <g class="sculpt-frag frag-10">
+            <polygon points="290,265 350,240 360,310 320,340" fill="#1F1F1F" stroke="#363636" stroke-width="1"/>
+          </g>
+          <!-- Fragment 11: Lower Needle Blade -->
+          <g class="sculpt-frag frag-11">
+            <polygon points="250,390 262,430 250,420 238,430" fill="#D6FF3F" stroke="#D6FF3F" stroke-width="1"/>
+          </g>
+          <!-- Fragment 12: Satellite Left Bracket -->
+          <g class="sculpt-frag frag-12">
+            <polygon points="120,150 140,140 130,190" fill="#181818" stroke="#383838" stroke-width="1"/>
+          </g>
+          <!-- Fragment 13: Satellite Right Bracket -->
+          <g class="sculpt-frag frag-13">
+            <polygon points="370,290 390,320 360,330" fill="#181818" stroke="#383838" stroke-width="1"/>
+          </g>
+          <!-- Fragment 14: Top Antenna Spire -->
+          <g class="sculpt-frag frag-14">
+            <polygon points="250,70 254,110 246,110" fill="#F1EFE8" stroke="#F1EFE8" stroke-width="1"/>
+          </g>
+        </g>
+
+        <!-- Center Glowing Callout -->
+        <circle cx="250" cy="250" r="3.5" fill="#D6FF3F" class="genesis-center-pip"/>
+      </svg>
+    </div>
+
+    <!-- Stage 04 Identity Reveal -->
+    <div class="genesis-identity">
+      <div class="genesis-name-mask">
+        <span class="genesis-name">DHRUV JAGTAP</span>
+      </div>
+      <div class="genesis-sub-mask">
+        <span class="genesis-subtitle">ASPIRING DEVELOPER / WEB &amp; AI</span>
+      </div>
+    </div>
+
+    <!-- Stage 05 Progress Indicator -->
+    <div class="genesis-progress-track" aria-hidden="true">
+      <div class="genesis-progress-line" id="genesis-progress-line"></div>
+    </div>
+
+  </div>
 
   <!-- Accessible Skip Link -->
   <a href="#main-content" class="skip-link">Skip to main content</a>

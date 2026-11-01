@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Flag that JavaScript is operational for progressive styling
   document.documentElement.classList.add('js-enabled');
 
+  initGenesisPreloader();
   initDynamicYear();
   initScrollReveal();
   initMobileNavigation();
@@ -23,6 +24,115 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollSpy();
   initConstructTilt();
 });
+
+/**
+ * PROJECT: GENESIS — Cinematic Preloader Controller
+ * Sequences awakening, fragmented chaos, synchronization, identity reveal,
+ * smooth progress line, and the camera expansion transition into the homepage.
+ */
+function initGenesisPreloader() {
+  const preloader = document.getElementById('genesis-preloader');
+  if (!preloader) return;
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let alreadySeen = false;
+  try {
+    alreadySeen = sessionStorage.getItem('genesis_preloader_seen') === 'true';
+  } catch (e) {
+    alreadySeen = false;
+  }
+
+  const hash = window.location.hash;
+  const isSculptureInspect = hash === '#sculpture';
+  const isSkipPreloader = hash === '#skip' || hash === '#preview';
+
+  // Bypass immediately if already seen in this session or if reduced motion is requested
+  if ((alreadySeen || prefersReduced || isSkipPreloader) && !isSculptureInspect) {
+    document.documentElement.classList.remove('genesis-loading');
+    preloader.style.display = 'none';
+    preloader.setAttribute('aria-hidden', 'true');
+    return;
+  }
+
+  // If directly inspecting the assembled geometric sculpture
+  if (isSculptureInspect) {
+    document.documentElement.classList.add('genesis-loading');
+    preloader.classList.add('genesis-inspect');
+    return;
+  }
+
+  document.documentElement.classList.add('genesis-loading');
+  const progressLine = document.getElementById('genesis-progress-line');
+
+  let isPageLoaded = document.readyState === 'complete';
+  if (!isPageLoaded) {
+    window.addEventListener('load', () => {
+      isPageLoaded = true;
+    }, { once: true });
+  }
+
+  const startTime = performance.now();
+  const targetDuration = 2000; // 2 seconds target duration
+  const maxSafetyTimeout = 3200; // Hard fail-safe limit to never block user
+  let animationCompleted = false;
+
+  function finishPreloader() {
+    if (animationCompleted) return;
+    animationCompleted = true;
+
+    if (progressLine) {
+      progressLine.style.transform = 'scaleX(1)';
+    }
+
+    // Trigger Stage 06: Expansion transition towards camera & fade-out
+    preloader.classList.add('genesis-complete');
+
+    // Wait for the expansion and fade transition to complete
+    setTimeout(() => {
+      document.documentElement.classList.remove('genesis-loading');
+      preloader.style.display = 'none';
+      preloader.setAttribute('aria-hidden', 'true');
+
+      try {
+        sessionStorage.setItem('genesis_preloader_seen', 'true');
+      } catch (e) {}
+
+      // Resume existing hero animations cleanly
+      const heroRows = document.querySelectorAll('.headline-row');
+      heroRows.forEach((row) => {
+        row.style.animationPlayState = 'running';
+      });
+    }, 650);
+  }
+
+  function step(now) {
+    const elapsed = now - startTime;
+    // Progress follows a smooth ease curve
+    let rawProgress = Math.min(1, elapsed / targetDuration);
+    // Cubic ease-out curve
+    let eased = 1 - Math.pow(1 - rawProgress, 2.5);
+
+    // If page is not loaded yet, hold progress gracefully at ~95%
+    if (!isPageLoaded && eased > 0.94 && elapsed < maxSafetyTimeout) {
+      eased = 0.94;
+    }
+
+    if (progressLine) {
+      progressLine.style.transform = `scaleX(${eased.toFixed(4)})`;
+    }
+
+    if ((elapsed >= targetDuration && isPageLoaded) || elapsed >= maxSafetyTimeout) {
+      finishPreloader();
+    } else {
+      requestAnimationFrame(step);
+    }
+  }
+
+  requestAnimationFrame(step);
+
+  // Absolute safety fallback timer
+  setTimeout(finishPreloader, maxSafetyTimeout + 300);
+}
 
 /**
  * 0. Dynamic Current Year Synchronization
