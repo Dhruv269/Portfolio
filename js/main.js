@@ -123,6 +123,13 @@ function initMobileNavigation() {
       toggleBtn.focus();
     }
   });
+
+  // Automatically close drawer if resized beyond tablet drawer breakpoint
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 960 && toggleBtn.getAttribute('aria-expanded') === 'true') {
+      setMenuState(false);
+    }
+  }, { passive: true });
 }
 
 /**
@@ -203,6 +210,10 @@ function initScrollSpy() {
 function initConstructTilt() {
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (prefersReduced) return;
+
+  // Only enable 3D mouse parallax tilt on devices with hover/fine pointer capability
+  const hasFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (!hasFinePointer) return;
 
   const heroSection = document.getElementById('hero');
   const construct = document.getElementById('editorial-construct');

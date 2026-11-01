@@ -682,6 +682,7 @@ body.editorial-body {
   display: flex;
   align-items: center;
   gap: 1.25rem;
+  flex-wrap: wrap;
 }
 
 .deck-item {
@@ -1675,6 +1676,11 @@ body.editorial-body {
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--c-hairline-light);
   transition: color var(--trans-micro), border-bottom-color var(--trans-micro);
+  max-width: 100%;
+}
+
+.email-text {
+  overflow-wrap: anywhere;
 }
 
 .giant-email-link:hover {
@@ -1860,10 +1866,19 @@ body.editorial-body {
    13. RESPONSIVE BREAKPOINTS
    -------------------------------------------------------------------------- */
 
-/* Tablet (<= 1024px) */
+/* Large Tablet / Small Laptop (<= 1024px) */
 @media (max-width: 1024px) {
   :root {
     --container-padding: 1.75rem;
+  }
+
+  /* Free up space in header by hiding location status */
+  .status-indicator {
+    display: none;
+  }
+
+  .nav-link {
+    padding: 0.45rem 0.65rem;
   }
 
   .hero-grid {
@@ -1915,28 +1930,21 @@ body.editorial-body {
   }
 }
 
-/* Mobile (<= 768px) */
-@media (max-width: 768px) {
-  :root {
-    --container-padding: 1.25rem;
-  }
-
-  .section {
-    padding-top: 4.5rem;
-    padding-bottom: 4.5rem;
-  }
-
+/* Tablet (<= 960px) — Switch to Accessible Sliding Drawer */
+@media (max-width: 960px) {
   /* Show mobile menu button when JS enabled */
   .js-enabled .nav-toggle {
     display: flex;
   }
 
-  /* Mobile Navigation Drawer */
-  .site-nav {
+  /* Mobile Navigation Drawer: only hidden offscreen when JS is active */
+  .js-enabled .site-nav {
     position: fixed;
     top: var(--header-height);
     left: 0;
     right: 0;
+    max-height: calc(100vh - var(--header-height));
+    overflow-y: auto;
     background-color: rgba(16, 16, 16, 0.98);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -1948,7 +1956,7 @@ body.editorial-body {
     transition: transform var(--trans-standard), opacity var(--trans-standard);
   }
 
-  .site-nav.nav-menu--open {
+  .js-enabled .site-nav.nav-menu--open {
     transform: translateY(0);
     opacity: 1;
     pointer-events: auto;
@@ -1961,7 +1969,8 @@ body.editorial-body {
   }
 
   .nav-link {
-    padding: 0.75rem 0.5rem;
+    padding: 0.85rem 0.75rem;
+    min-height: 44px;
     font-size: var(--text-base);
     border-bottom: 1px solid var(--c-hairline);
   }
@@ -1969,9 +1978,23 @@ body.editorial-body {
   .nav-link::after {
     display: none;
   }
+}
 
-  .status-indicator {
-    display: none;
+/* Tablet Portrait & Mobile (<= 768px) */
+@media (max-width: 768px) {
+  :root {
+    --container-padding: 1.25rem;
+  }
+
+  .section {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  /* Section Header Ledger wrapping on mobile */
+  .section-ledger {
+    gap: 0.85rem;
+    margin-bottom: 2.25rem;
   }
 
   /* Hero Section Mobile */
@@ -1999,6 +2022,11 @@ body.editorial-body {
     width: 100%;
   }
 
+  .hero-social-deck .deck-links {
+    flex-wrap: wrap;
+    gap: 0.85rem 1.25rem;
+  }
+
   .editorial-construct {
     max-width: 320px;
   }
@@ -2014,10 +2042,27 @@ body.editorial-body {
     padding: 0.5rem 0.75rem;
   }
 
+  .hero-bottom-bar {
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    justify-content: space-between;
+    padding-top: 1.25rem;
+  }
+
   /* Timeline */
   .timeline-row {
     grid-template-columns: 1fr;
     row-gap: 0.75rem;
+  }
+
+  /* Cards responsive padding */
+  .exploring-card,
+  .beyond-card {
+    padding: 1.75rem 1.5rem;
+  }
+
+  .skills-ledger-column {
+    padding: 1.75rem 1.5rem;
   }
 
   /* Contact */
@@ -2025,10 +2070,158 @@ body.editorial-body {
     padding: 2.5rem 1.5rem;
   }
 
+  .giant-email-link {
+    font-size: clamp(1rem, 3.8vw, 1.6rem);
+    gap: 0.75rem;
+    max-width: 100%;
+  }
+
+  .email-text {
+    word-break: break-all;
+  }
+
+  .ch-link {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
   .footer-inner {
     flex-direction: column;
     gap: 1rem;
     text-align: center;
+    align-items: center;
+  }
+}
+
+/* Mobile Handhelds (<= 600px) */
+@media (max-width: 600px) {
+  /* Two-row layout for skills table so context does not compress into awkward multi-line stacks */
+  .skill-row {
+    grid-template-columns: 28px 1fr;
+    grid-template-rows: auto auto;
+    row-gap: 0.25rem;
+    padding: 0.75rem 0.25rem;
+  }
+
+  .skill-num {
+    grid-row: 1 / 3;
+    align-self: start;
+    padding-top: 0.15rem;
+  }
+
+  .skill-name {
+    grid-column: 2;
+  }
+
+  .skill-context {
+    grid-column: 2;
+    text-align: left;
+    color: var(--c-grey);
+    font-size: var(--text-micro);
+  }
+}
+
+/* Small Mobile (<= 480px, including 390px and 320px) */
+@media (max-width: 480px) {
+  :root {
+    --container-padding: 1rem;
+  }
+
+  .section {
+    padding-top: 3.75rem;
+    padding-bottom: 3.75rem;
+  }
+
+  /* Prevent character clipping in masked headline */
+  .hero-headline {
+    font-size: clamp(1.65rem, 7.5vw, 2.1rem);
+  }
+
+  /* Prevent horizontal overflow on long ledgers */
+  .section-ledger {
+    flex-wrap: wrap;
+    gap: 0.5rem 0.75rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .ledger-divider {
+    min-width: 15px;
+  }
+
+  .ledger-category {
+    white-space: normal;
+    font-size: 0.625rem;
+  }
+
+  /* Balanced bottom bar */
+  .hero-bottom-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  /* Compact editorial construct for 320px screens */
+  .editorial-construct {
+    max-width: 275px;
+  }
+
+  .construct-hud-plate {
+    width: 92%;
+    padding: 0.65rem 0.5rem;
+  }
+
+  .plate-row {
+    font-size: 0.625rem;
+  }
+
+  .plate-footer {
+    font-size: 0.5625rem;
+  }
+
+  .about-data-card {
+    padding: 1.25rem 1rem;
+  }
+
+  .exploring-card,
+  .beyond-card {
+    padding: 1.5rem 1.15rem;
+  }
+
+  .skills-ledger-column {
+    padding: 1.5rem 1rem;
+  }
+
+  .contact-editorial-box {
+    padding: 2rem 1.15rem;
+  }
+
+  .giant-email-link {
+    font-size: clamp(0.85rem, 4.4vw, 1.1rem);
+    gap: 0.5rem;
+  }
+
+  .footer-specs {
+    font-size: 0.625rem;
+  }
+}
+
+/* Extra Small Mobile (<= 340px, e.g. 320px) */
+@media (max-width: 340px) {
+  .brand-role {
+    display: none;
+  }
+
+  .editorial-construct {
+    max-width: 260px;
+  }
+
+  .construct-floating-chip {
+    padding: 0.35rem 0.55rem;
+  }
+
+  .chip-title {
+    font-size: 0.6875rem;
   }
 }
 
