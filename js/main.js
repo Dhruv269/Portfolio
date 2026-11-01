@@ -16,12 +16,25 @@ document.addEventListener('DOMContentLoaded', () => {
   // Flag that JavaScript is operational for progressive styling
   document.documentElement.classList.add('js-enabled');
 
+  initDynamicYear();
   initScrollReveal();
   initMobileNavigation();
   initHeaderScrollState();
   initScrollSpy();
   initConstructTilt();
 });
+
+/**
+ * 0. Dynamic Current Year Synchronization
+ * Keeps copyright notices and footer year dynamically synchronized with the current calendar year.
+ */
+function initDynamicYear() {
+  const currentYear = new Date().getFullYear();
+  const yearElements = document.querySelectorAll('.current-year');
+  yearElements.forEach((el) => {
+    el.textContent = String(currentYear);
+  });
+}
 
 /**
  * 1. Scroll-Triggered Element Reveals
