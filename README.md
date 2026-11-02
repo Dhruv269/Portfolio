@@ -1,126 +1,115 @@
 # Dhruv Jagtap — Personal Developer Portfolio
 
-A modern, minimal, and dark editorial developer portfolio built from scratch with semantic HTML5, modern CSS3 custom properties, and vanilla JavaScript. Zero external frameworks, build tools, or runtime dependencies.
+A personal developer portfolio built with semantic HTML5, modern CSS3, and vanilla JavaScript. Designed with a **Dark Experimental Editorial** aesthetic, featuring zero runtime dependencies, frameworks, or build configurations.
 
 ---
 
-## Overview
+## 1. Project Overview
 
-This repository contains the source code for the personal developer portfolio of **Dhruv Jagtap**, a first-year Computer Science student specializing in Artificial Intelligence and Machine Learning at Newton School of Technology – ADYPU, Pune.
+This repository contains the source code for the personal developer portfolio of **Dhruv Jagtap**. 
 
-The portfolio is designed around a "learning by building" philosophy. Rather than using generic templates or unearned claims, it documents genuine early milestones, active learning frontiers, verified tooling exposure, and personal pursuits through a distinct **Dark Experimental Editorial** visual language.
-
----
-
-## Key Features
-
-- **Semantic HTML5 & Accessibility**: Built with accessible landmark elements (`<header>`, `<main>`, `<section>`, `<article>`, `<nav>`, `<footer>`), strict heading hierarchy, skip-to-content shortcut, and full usability even if JavaScript is disabled.
-- **Dark Editorial Visual Design**: Tailored INK / ACID color system (`#101010` ink canvas, `#D6FF3F` acid lime, `#FF5C35` signal orange, and `#F1EFE8` paper white) paired with Space Grotesk and JetBrains Mono typography.
-- **Choreographed Hero & Abstract Artwork**: Sequenced page-load entrance with kinetic masked headline reveals, technical metadata ribbons, and a bespoke SVG coordinate drafting construct featuring a restrained 3D mouse parallax tilt.
-- **Currently Exploring Section**: Four-part ledger highlighting active learning domains (Python fundamentals, Web Development foundations, Full-Stack concepts, and Artificial Intelligence) without prematurely claiming mastery.
-- **Verified Technical Skills & Honest Disclosure**: Catalogs only tools with practical exposure (Python, Git, GitHub, Visual Studio Code, Antigravity IDE, Terminal/CLI, ChatGPT, Gemini) alongside an explicit proficiency statement.
-- **Activities & Journey Record**: Highlights early sprint milestones, including participation in Hacktoberfest 2026 and current B.Tech undergraduate coursework.
-- **Beyond the Code**: Editorial cards covering personal interests outside of software engineering (Cricket and Music).
-- **Direct Communication & Dynamic Year**: Dedicated contact section with direct `mailto:` link, verified social links, and automated calendar-year synchronization via vanilla JavaScript with static HTML fallback.
-- **Motion System & Responsive Layout**: Fluid responsive design across mobile, tablet, and desktop screens with an accessible sliding navigation drawer, custom scroll spy, and full compliance with `prefers-reduced-motion`.
+- **Role**: Aspiring developer exploring Web Development and Artificial Intelligence.
+- **Education**: Computer Science undergraduate student specializing in AI/ML at Newton School of Technology – ADYPU, Pune.
+- **Purpose**: Showcases academic background, practical skills, active learning pursuits, and direct contact channels through a deliberate, high-contrast digital experience.
 
 ---
 
-## Tech Stack
+## 2. Features
 
-- **Markup**: [HTML5](https://developer.mozilla.org/en-US/docs/Web/HTML) — Semantic structure, accessible landmarks, and meta tags.
-- **Styling**: [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS) — Modular design tokens (CSS custom properties), CSS Grid, Flexbox, keyframe animations, and responsive media queries.
-- **Typography**: [Google Fonts](https://fonts.google.com/) — Space Grotesk (editorial headings) and JetBrains Mono (monospace metadata and HUD plates).
-- **Interactions**: [Vanilla JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) (ES6+) — Lightweight progressive enhancement, `IntersectionObserver` scroll reveals, active section scroll spy, and RAF tilt physics.
+- **Dark Experimental Editorial Design**: Bespoke INK / ACID visual palette (`#101010` ink canvas, `#D6FF3F` acid lime, `#FF5C35` signal orange, and `#F1EFE8` paper white) paired with Space Grotesk and JetBrains Mono typography.
+- **Cinematic PROJECT: GENESIS Preloader**: Multi-stage loading choreography featuring a central beacon awakening, polygonal fragment convergence, identity reveal, progress track, and camera-expansion reveal into the homepage. Includes session-storage caching and graceful bypass for `prefers-reduced-motion`.
+- **Custom Geometric D Monogram**: Precision 45-degree architectural monogram implemented across SVG favicon, Apple touch icon (`180x180`), web app icons (`32x32`, `192x192`), and the sticky navbar brand mark.
+- **Animated Interactions & Transitions**: Keyframe-driven masked text reveals, active section scroll spy, smooth anchor scrolling, and a restrained 3D parallax tilt construct on the hero plate.
+- **Responsive Layout**: Designed and tested across desktop (1440px), small laptop/landscape (1024px), tablet (768px), and mobile screens down to 320px, featuring an accessible mobile drawer navigation.
+- **Core Semantic Sections**:
+  - **About**: Personal philosophy, education milestones, and background narrative.
+  - **Skills**: Catalog of verified tools and technical exposure alongside an explicit proficiency statement.
+  - **Exploring**: Active learning frontiers spanning Python, Web foundations, Full-Stack concepts, and AI/ML.
+  - **Experience & Activities**: Early milestones and coursework timeline.
+  - **Beyond Code**: Personal pursuits outside software engineering (Cricket and Music).
+  - **Contact**: Direct communication channel with automatic dynamic calendar-year footer synchronization.
+- **Functional Navigation & Social Links**: Sticky header with verified external profiles (GitHub, LinkedIn, Email).
+- **SEO & Social Sharing Metadata**: Meta description, mobile theme-color declaration (`#101010`), Open Graph protocol tags, and Twitter / X Card metadata *(social preview image asset reserved for upcoming deployment)*.
 
 ---
 
-## Project Structure
+## 3. Tech Stack
+
+Built strictly with native web technologies:
+
+- **HTML5**: Semantic landmark elements, accessible ARIA attributes, and metadata tags.
+- **CSS3**: Custom properties (design tokens), CSS Grid, Flexbox, keyframe choreographies, and responsive media queries.
+- **Vanilla JavaScript (ES6+)**: Progressive enhancement, `IntersectionObserver` scroll listeners, drawer state management, and preloader sequencing.
+- **Google Fonts**: [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk) (editorial headings) and [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono) (technical labels and metadata).
+- **Version Control**: Git and [GitHub](https://github.com/Dhruv269/Portfolio).
+
+---
+
+## 4. Project Structure
 
 ```text
 Portfolio/
-├── index.html              # Primary semantic HTML document containing all portfolio sections
-├── README.md               # Project documentation and local setup guide
+├── index.html              # Primary semantic HTML document
+├── README.md               # Project documentation and setup guide
 ├── LICENSE                 # MIT License
 ├── css/
-│   └── style.css           # Modular CSS design system (tokens, resets, layout, animations & media queries)
+│   └── style.css           # Modular styling (tokens, layout, animations & responsive breakpoints)
 ├── js/
-│   └── main.js             # Vanilla JS motion engine (scroll reveal, scroll spy, drawer, tilt & dynamic year)
+│   └── main.js             # Vanilla JS engine (preloader, scroll spy, mobile drawer & dynamic year)
 └── assets/
-    ├── images/             # Directory for future project screenshots and visual assets
-    └── icons/              # Directory for custom icons and graphics
+    ├── icons/              # Brand identity icons and favicons
+    │   ├── apple-touch-icon.png
+    │   ├── favicon-32x32.png
+    │   ├── favicon-192x192.png
+    │   └── favicon.svg     # Geometric D monogram
+    └── images/             # Visual assets directory
 ```
 
 ---
 
-## Running Locally
+## 5. Run Locally
 
-Because this project is built entirely with vanilla web standards, it requires no package managers, build steps, or external installations.
+Because the project relies on native web standards, it requires no build tools or external packages.
 
-### Option 1: Python Built-in HTTP Server (Recommended)
-
-Python 3 comes pre-installed on macOS and most Linux distributions.
-
-1. Open your terminal and navigate to the project root directory:
+1. Clone the repository:
    ```bash
-   cd /path/to/Portfolio
+   git clone https://github.com/Dhruv269/Portfolio.git
    ```
-2. Start the local HTTP server on port 8000:
+
+2. Navigate into the project folder:
+   ```bash
+   cd Portfolio
+   ```
+
+3. Start a local HTTP server using Python:
    ```bash
    python3 -m http.server 8000
    ```
-3. Open your browser and visit:
-   ```text
-   http://localhost:8000
-   ```
-4. Press `Ctrl + C` in the terminal to stop the server when finished.
 
-### Option 2: Visual Studio Code Live Server
-
-If you use VS Code or a compatible IDE:
-1. Install the **Live Server** extension (by Ritwick Dey).
-2. Right-click on `index.html` in the file explorer.
-3. Select **Open with Live Server**.
-
-### Option 3: Direct File Opening
-
-You can also open the `index.html` file directly in any modern browser:
-
-- **macOS**:
-  ```bash
-  open index.html
-  ```
-- **Linux**:
-  ```bash
-  xdg-open index.html
-  ```
-- **Windows**:
-  ```cmd
-  start index.html
-  ```
+4. Open `http://localhost:8000` in your browser.
 
 ---
 
-## Future Roadmap
+## 6. Deployment
 
-The website is architected to scale as projects and credentials are created:
+This static portfolio can be deployed directly to [Vercel](https://vercel.com/):
 
-- [ ] **Vacation Projects Showcase**: Build and add interactive case study cards with live preview links, source code repositories, and technical breakdowns once vacation development sprints are complete.
-- [ ] **Resume Integration**: Upload finalized PDF resume to `assets/` and link the currently reserved `DOWNLOAD RESUME [COMING SOON]` button.
-- [ ] **Expanded Experience**: Document future hackathons, collaborative coding events, and open-source contributions.
+1. Push your latest changes to GitHub.
+2. Log in to Vercel and select **Add New Project**.
+3. Import the `Dhruv269/Portfolio` repository from your GitHub account.
+4. Keep the Framework Preset as **Other** (Root Directory `./`) and select **Deploy**.
 
 ---
 
-## Contact & Links
+## 7. Author & Contact
 
-- **Name**: Dhruv Jagtap
+- **Dhruv Jagtap**
+- **GitHub**: [https://github.com/Dhruv269](https://github.com/Dhruv269)
+- **LinkedIn**: [https://www.linkedin.com/in/dhruv-g-jagtap/](https://www.linkedin.com/in/dhruv-g-jagtap/)
 - **Email**: [dhruvjagtap269@gmail.com](mailto:dhruvjagtap269@gmail.com)
-- **GitHub**: [github.com/Dhruv269](https://github.com/Dhruv269)
-- **LinkedIn**: [linkedin.com/in/dhruv-g-jagtap](https://www.linkedin.com/in/dhruv-g-jagtap/)
-- **Location**: Pune, India &bull; IST (UTC+5:30)
 
 ---
 
-## License
+## 8. License
 
 This project is licensed under the [MIT License](LICENSE).
