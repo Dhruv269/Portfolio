@@ -1157,8 +1157,9 @@ body.editorial-body {
 
 .skill-row {
   display: grid;
-  grid-template-columns: 32px 1fr 1.2fr;
+  grid-template-columns: 28px 1fr auto;
   align-items: center;
+  gap: 0.75rem;
   padding: 0.85rem 0.5rem;
   border-bottom: 1px solid var(--c-hairline);
   font-size: var(--text-xs);
@@ -1171,7 +1172,7 @@ body.editorial-body {
 
 .skill-row:hover {
   background-color: rgba(255, 255, 255, 0.03);
-  padding-left: 0.85rem;
+  padding-left: 0.75rem;
 }
 
 .skill-num {
@@ -1180,16 +1181,68 @@ body.editorial-body {
   font-size: var(--text-micro);
 }
 
+.skill-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
 .skill-name {
   font-weight: 600;
   color: var(--c-white);
+  line-height: 1.35;
+}
+
+.skill-level {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  color: var(--c-acid);
+  letter-spacing: 0.03em;
+  opacity: 0.95;
 }
 
 .skill-context {
   font-family: var(--font-mono);
   font-size: var(--text-micro);
   color: var(--c-grey);
-  text-align: right;
+}
+
+.skill-evidence {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.evidence-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.2rem 0.5rem;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--c-hairline-light);
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  color: var(--c-white-muted);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color var(--trans-micro), border-color var(--trans-micro), background-color var(--trans-micro), transform var(--trans-micro);
+}
+
+.evidence-link:hover {
+  color: var(--c-acid);
+  border-color: var(--c-acid);
+  background-color: rgba(214, 255, 63, 0.08);
+  transform: translateY(-1px);
+}
+
+.evidence-link .link-arrow {
+  color: var(--c-acid);
+  font-size: 0.75rem;
+  line-height: 1;
 }
 
 .column-header-secondary {
@@ -2110,10 +2163,10 @@ body.editorial-body {
 @media (max-width: 600px) {
   /* Two-row layout for skills table so context does not compress into awkward multi-line stacks */
   .skill-row {
-    grid-template-columns: 28px 1fr;
+    grid-template-columns: 24px 1fr;
     grid-template-rows: auto auto;
-    row-gap: 0.25rem;
-    padding: 0.75rem 0.25rem;
+    row-gap: 0.45rem;
+    padding: 0.85rem 0.25rem;
   }
 
   .skill-num {
@@ -2122,15 +2175,13 @@ body.editorial-body {
     padding-top: 0.15rem;
   }
 
-  .skill-name {
+  .skill-info {
     grid-column: 2;
   }
 
-  .skill-context {
+  .skill-evidence {
     grid-column: 2;
-    text-align: left;
-    color: var(--c-grey);
-    font-size: var(--text-micro);
+    justify-content: flex-start;
   }
 }
 
