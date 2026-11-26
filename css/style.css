@@ -1281,6 +1281,282 @@ body.editorial-body {
 }
 
 /* --------------------------------------------------------------------------
+   6. S&AI OPEN-SOURCE CONTRIBUTIONS SECTION
+   -------------------------------------------------------------------------- */
+.contributions-section {
+  position: relative;
+}
+
+.contributions-intro-wrap {
+  margin-bottom: 3.5rem;
+}
+
+.contributions-header-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.contributions-meta-card {
+  background-color: var(--c-charcoal);
+  border: 1px solid var(--c-hairline);
+  padding: 1.5rem 1.75rem;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: border-color var(--trans-standard);
+}
+
+.contributions-meta-card:hover {
+  border-color: var(--c-hairline-light);
+}
+
+.meta-card-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0.85rem;
+  background-color: rgba(214, 255, 63, 0.08);
+  border: 1px solid rgba(214, 255, 63, 0.25);
+  border-radius: 2px;
+}
+
+.meta-card-summary {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--c-acid);
+  letter-spacing: 0.02em;
+}
+
+.meta-card-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.meta-item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--c-hairline);
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+}
+
+.meta-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.meta-label {
+  color: var(--c-grey);
+  letter-spacing: 0.06em;
+}
+
+.meta-val {
+  color: var(--c-white);
+  font-weight: 500;
+}
+
+.meta-link {
+  color: var(--c-white);
+  text-decoration: none;
+  transition: color var(--trans-micro);
+}
+
+.meta-link:hover {
+  color: var(--c-acid);
+}
+
+/* Contributions Case Study Grid */
+.contributions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+}
+
+.contribution-card {
+  background-color: var(--c-charcoal);
+  border: 1px solid var(--c-hairline);
+  padding: 1.85rem 1.75rem 1.5rem;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: border-color var(--trans-standard), background-color var(--trans-standard), transform var(--trans-standard);
+  position: relative;
+}
+
+.contribution-card:hover {
+  border-color: rgba(214, 255, 63, 0.35);
+  background-color: rgba(255, 255, 255, 0.025);
+  transform: translateY(-3px);
+}
+
+.contrib-card-header {
+  margin-bottom: 1.25rem;
+}
+
+.contrib-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.contrib-task-id {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  font-weight: 700;
+  color: var(--c-acid);
+  background-color: rgba(214, 255, 63, 0.08);
+  border: 1px solid rgba(214, 255, 63, 0.25);
+  padding: 0.25rem 0.55rem;
+  border-radius: 2px;
+  letter-spacing: 0.04em;
+}
+
+.contrib-issue-tag {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  color: var(--c-grey);
+  letter-spacing: 0.05em;
+}
+
+.contrib-name {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--c-white);
+  line-height: 1.35;
+  margin: 0;
+}
+
+.contrib-name code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  color: var(--c-acid);
+}
+
+.contrib-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  flex-grow: 1;
+  margin-bottom: 1.5rem;
+}
+
+.contrib-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contrib-block-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  color: var(--c-grey);
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+
+.contrib-mod-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contrib-mod-list li {
+  position: relative;
+  padding-left: 1.15rem;
+  font-size: var(--text-xs);
+  line-height: 1.55;
+  color: var(--c-white-muted);
+}
+
+.contrib-mod-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--c-acid);
+  opacity: 0.8;
+}
+
+.contrib-mod-list code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  color: var(--c-white);
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 0.1rem 0.35rem;
+  border-radius: 2px;
+}
+
+.contrib-rationale-block {
+  padding: 0.85rem 1rem;
+  background-color: rgba(255, 255, 255, 0.02);
+  border-left: 2px solid var(--c-acid);
+  border-radius: 0 2px 2px 0;
+}
+
+.contrib-rationale-text {
+  font-size: var(--text-xs);
+  line-height: 1.6;
+  color: var(--c-white-muted);
+  font-style: italic;
+  margin: 0;
+}
+
+.contrib-card-footer {
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--c-hairline);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.contrib-pr-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.95rem;
+  background-color: rgba(214, 255, 63, 0.05);
+  border: 1px solid rgba(214, 255, 63, 0.25);
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--c-acid);
+  text-decoration: none;
+  transition: all var(--trans-micro);
+}
+
+.contrib-pr-link:hover {
+  background-color: rgba(214, 255, 63, 0.15);
+  border-color: var(--c-acid);
+  color: var(--c-white);
+  transform: translateY(-1px);
+}
+
+.contrib-pr-link .link-arrow {
+  color: var(--c-acid);
+  font-size: 0.85rem;
+  transition: transform var(--trans-micro);
+}
+
+.contrib-pr-link:hover .link-arrow {
+  transform: translate(2px, -2px);
+}
+
+/* --------------------------------------------------------------------------
    7. FEATURED PROJECTS — EDITORIAL SELECTED WORKS
    Microinteractions: Zoom, Arrow Slide, Border Accent
    -------------------------------------------------------------------------- */
@@ -1977,6 +2253,16 @@ body.editorial-body {
     row-gap: 2rem;
   }
 
+  .contributions-header-grid {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+  }
+
+  .contributions-grid {
+    grid-template-columns: 1fr;
+    row-gap: 1.5rem;
+  }
+
   .project-entry-main {
     grid-template-columns: 1fr;
     row-gap: 2rem;
@@ -2194,6 +2480,10 @@ body.editorial-body {
   .section {
     padding-top: 3.75rem;
     padding-bottom: 3.75rem;
+  }
+
+  .contribution-card {
+    padding: 1.5rem 1.25rem 1.25rem;
   }
 
   /* Prevent character clipping in masked headline */
